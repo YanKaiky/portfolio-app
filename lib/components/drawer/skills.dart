@@ -44,13 +44,6 @@ class Skills extends StatelessWidget {
                 percentage: 0.57,
               ),
             ),
-            SizedBox(width: defaultPadding),
-            Expanded(
-              child: AnimatedCircularProgressIndicator(
-                label: 'DevOps',
-                percentage: 0.66,
-              ),
-            ),
           ],
         ),
       ],

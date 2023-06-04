@@ -7,5 +7,6 @@ class AppColors {
   static const text = Color(0xFF8B8B8D);
   static const bgcolor = Color(0xFF1E1E28);
   static const bgcolorSecondary = Color(0xFF242430);
+  static const bgcolorTertiary = Color(0xFF24242E);
   static const white = Colors.white;
 }

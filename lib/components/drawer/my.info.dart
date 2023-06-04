@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:portfolio/components/drawer/social.medias.dart';
 import 'package:portfolio/utils/colors.dart';
+import 'package:portfolio/utils/constants.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({
@@ -9,7 +12,7 @@ class MyInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.23,
+      aspectRatio: 1.1,
       child: Container(
         color: AppColors.bgcolorSecondary,
         child: Column(
@@ -33,6 +36,30 @@ class MyInfo extends StatelessWidget {
                 fontWeight: FontWeight.w200,
                 height: 1.5,
               ),
+            ),
+            const Spacer(),
+            Column(
+              children: [
+                const SizedBox(height: defaultPadding / 2),
+                TextButton(
+                  onPressed: () {},
+                  child: FittedBox(
+                    child: Row(
+                      children: [
+                        Text(
+                          'DOWNLOAD CV',
+                          style: TextStyle(
+                            color: Theme.of(context).textTheme.bodyText1!.color,
+                          ),
+                        ),
+                        const SizedBox(width: defaultPadding / 2),
+                        SvgPicture.asset('assets/icons/download.svg')
+                      ],
+                    ),
+                  ),
+                ),
+                const SocialMedias(),
+              ],
             ),
             const Spacer(flex: 2),
           ],

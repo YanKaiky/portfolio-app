@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/src/screens/home/inedx.dart';
+import 'package:portfolio/src/screens/home/index.dart';
 import 'package:portfolio/utils/colors.dart';
 
 class PortfolioApp extends StatelessWidget {

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:portfolio/components/drawer/side.menu.dart';
 import 'package:portfolio/utils/constants.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ContentScreen extends StatelessWidget {
+  final List<Widget> chidren;
+
+  const ContentScreen({
+    Key? key,
+    required this.chidren,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +18,21 @@ class HomeScreen extends StatelessWidget {
         child: Container(
           constraints: const BoxConstraints(maxWidth: maxWidth),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Expanded(
                 flex: 2,
                 child: SideMenu(),
               ),
+              const SizedBox(width: defaultPadding),
               Expanded(
                 flex: 7,
-                child: Container(
-                  color: Colors.blue,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...chidren,
+                    ],
+                  ),
                 ),
               )
             ],
