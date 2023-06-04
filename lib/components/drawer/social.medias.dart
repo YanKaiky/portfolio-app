@@ -11,8 +11,12 @@ class SocialMedias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: defaultPadding),
-      color: AppColors.bgcolorTertiary,
+      margin: const EdgeInsets.only(
+        top: defaultPadding,
+        left: defaultPadding / 2,
+        right: defaultPadding / 2,
+      ),
+      color: AppColors.bgcolor,
       child: Row(
         children: [
           const Spacer(),

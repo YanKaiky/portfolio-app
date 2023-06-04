@@ -6,21 +6,21 @@ class ProjectsRepository {
       final values = [
         {
           "guid": "ac0f8cc8-06bd-4b21-b6c4-f0eb0000276e",
-          "title": 'Cinemovie',
-          "description": 'Free movies, series and animes online',
+          "title": 'Cinemovie - Online movies, series and animes',
+          "description": 'Free movies, series and animes',
           "category": 'WEB - API',
           "url": 'https://github.com/YanKaiky/cinemovie',
         },
         {
           "guid": "c93a3fb9-305a-452c-b673-dafbacf41365",
-          "title": 'Instituo Pequena Fênix',
+          "title": 'Instituo Pequena Fênix - IPF',
           "description": "Children's Hospital",
           "category": 'WEB',
           "url": "https://github.com/YanKaiky/white-label-hospital",
         },
         {
           "guid": "034c2e0c-b352-4a30-956e-ceb8ac0dffa4",
-          "title": 'Fintelles',
+          "title": 'Fintelles - Personal finance',
           "description": 'Personal finance tracking website',
           "category": 'WEB - API',
           "url": 'https://github.com/YanKaiky/fintellis',
@@ -35,14 +35,14 @@ class ProjectsRepository {
         },
         {
           "guid": "903d1839-a22a-4ea1-ac91-4b628fc16967",
-          "title": 'CafeOn',
+          "title": 'CafeOn - Menu',
           "description": 'Mobile APP for varied menus of cafes and snacks',
           "category": 'APP',
           "url": 'https://github.com/YanKaiky/cafe',
         },
         {
           "guid": "903d1839-a22a-4ea1-ac91-4b628fc16967",
-          "title": 'SHOPSHOE',
+          "title": 'ShopShoe - Sales APP',
           "description": 'Shoe sales APP',
           "category": 'APP',
           "url": 'https://github.com/YanKaiky/shop',
