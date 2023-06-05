@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/models/projects.model.dart';
 import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/responsive.dart';
 
 class ProjectCard extends StatelessWidget {
   final ProjectsModel project;
@@ -28,7 +29,7 @@ class ProjectCard extends StatelessWidget {
           const Spacer(),
           Text(
             project.description,
-            maxLines: 4,
+            maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(height: 1.5),
           ),
@@ -46,6 +47,9 @@ class ProjectCard extends StatelessWidget {
               Text(
                 project.category,
                 overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: Responsive.isTablet(context) ? 10 : null,
+                ),
               ),
             ],
           ),

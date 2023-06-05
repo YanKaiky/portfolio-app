@@ -1,7 +1,8 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/components/content/animated.text.dart';
 import 'package:portfolio/components/content/flutter.coded.text.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/responsive.dart';
 
 class BuildAnimatedText extends StatelessWidget {
   const BuildAnimatedText({
@@ -11,30 +12,21 @@ class BuildAnimatedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
+      maxLines: 1,
       style: Theme.of(context).textTheme.subtitle1!,
       child: Row(
         children: [
-          const FlutterCodedText(),
-          const SizedBox(width: defaultPadding / 2),
+          if (!Responsive.isMobileLarge(context)) const FlutterCodedText(),
+          if (!Responsive.isMobileLarge(context))
+            const SizedBox(width: defaultPadding / 2),
           const Text('I build '),
-          AnimatedTextKit(
-            animatedTexts: [
-              TyperAnimatedText(
-                'responsive web and mobile App.',
-                speed: const Duration(milliseconds: 60),
-              ),
-              TyperAnimatedText(
-                'complete e-Commerce App UI.',
-                speed: const Duration(milliseconds: 60),
-              ),
-              TyperAnimatedText(
-                'Chat app with dark and light theme.',
-                speed: const Duration(milliseconds: 60),
-              ),
-            ],
-          ),
-          const SizedBox(width: defaultPadding / 2),
-          const FlutterCodedText(last: true),
+          Responsive.isMobile(context)
+              ? const Expanded(child: AnimatedText())
+              : const AnimatedText(),
+          if (!Responsive.isMobileLarge(context))
+            const SizedBox(width: defaultPadding / 2),
+          if (!Responsive.isMobileLarge(context))
+            const FlutterCodedText(last: true),
         ],
       ),
     );

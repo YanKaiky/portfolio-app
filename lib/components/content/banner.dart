@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/components/content/build.animated.text.dart';
 import 'package:portfolio/utils/colors.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/responsive.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({
@@ -11,7 +12,7 @@ class HomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 3,
+      aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -28,27 +29,40 @@ class HomeBanner extends StatelessWidget {
               children: [
                 Text(
                   'Discovery my Amazing \nArt Space!',
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.white,
-                      ),
+                  style: Responsive.isDesktop(context)
+                      ? Theme.of(context).textTheme.headline3!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.white,
+                          )
+                      : Responsive.isMobile(context)
+                          ? Theme.of(context).textTheme.headline6!.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.white,
+                              )
+                          : Theme.of(context).textTheme.headline5!.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.white,
+                              ),
                 ),
+                if (Responsive.isMobileLarge(context))
+                  const SizedBox(height: defaultPadding / 2),
                 const BuildAnimatedText(),
                 const SizedBox(height: defaultPadding),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: defaultPadding * 2,
-                      vertical: defaultPadding,
+                if (!Responsive.isMobileLarge(context))
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: defaultPadding * 2,
+                        vertical: defaultPadding,
+                      ),
+                      backgroundColor: AppColors.primary,
                     ),
-                    backgroundColor: AppColors.primary,
-                  ),
-                  child: const Text(
-                    'EXPLORE NOW',
-                    style: TextStyle(color: AppColors.dark),
-                  ),
-                )
+                    child: const Text(
+                      'EXPLORE NOW',
+                      style: TextStyle(color: AppColors.dark),
+                    ),
+                  )
               ],
             ),
           )

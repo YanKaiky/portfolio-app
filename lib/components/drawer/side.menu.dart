@@ -21,29 +21,31 @@ class SideMenu extends StatelessWidget {
     final age = calculateAge(birthday, today);
 
     return Drawer(
-      child: Column(
-        children: [
-          const MyInfo(),
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(defaultPadding),
-              child: Column(
-                children: [
-                  const AreaInfo(title: 'Residence:', value: 'Brazil'),
-                  const AreaInfo(title: 'Location:', value: 'Blumenau, SC'),
-                  AreaInfo(
-                    title: 'Age:',
-                    value: age.toString(),
-                  ),
-                  const Skills(),
-                  const Knowledges(),
-                  const SizedBox(height: defaultPadding),
-                  const Coding(),
-                ],
+      child: SafeArea(
+        child: Column(
+          children: [
+            const MyInfo(),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(defaultPadding),
+                child: Column(
+                  children: [
+                    const AreaInfo(title: 'Residence:', value: 'Brazil'),
+                    const AreaInfo(title: 'Location:', value: 'Blumenau, SC'),
+                    AreaInfo(
+                      title: 'Age:',
+                      value: age.toString(),
+                    ),
+                    const Skills(),
+                    const Knowledges(),
+                    const SizedBox(height: defaultPadding),
+                    const Coding(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

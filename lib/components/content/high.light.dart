@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:portfolio/components/content/animated.counter.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/responsive.dart';
 
 class HighLight extends StatelessWidget {
   final AnimatedCounter counter;
@@ -21,7 +22,11 @@ class HighLight extends StatelessWidget {
         const SizedBox(width: defaultPadding / 2),
         Text(
           label!,
-          style: Theme.of(context).textTheme.subtitle2,
+          style: Responsive.isMobileLarge(context)
+              ? const TextStyle(fontSize: 10)
+              : Responsive.isMobile(context)
+                  ? const TextStyle(fontSize: 8)
+                  : Theme.of(context).textTheme.subtitle2,
         ),
       ],
     );
